@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Locality Tour</title>
+ <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+ <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+ <script src="./js/Place.js"></script>
+ <script src="./js/CursorEvents.js"></script>
+</head>
+<body>
+<a-scene>
+ <a-sky 
+ id="Sky"
+ radius="10000"
+ src="locality.jpg"
+ ></a-sky>
+
+
+ <a-entity id="places-container" cursor-listener></a-entity>
+
+ <a-entity id="Room-container" 
+   house-view
+   cursor-listener
+ ></a-entity>
+
+ <a-camera>
+ <a-entity
+  id="camera-cursor"
+  cursor
+  position="0 0 -1"
+  geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.08"
+  material="color: red; shader: flat"
+    >
+  </a-entity>
+ </a-camera>
+ </a-scene>
+</body>
+</html>
